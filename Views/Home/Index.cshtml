@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -11,7 +10,13 @@
     <title>Home View</title>
 </head>
 <body>
-    <h2>Hello ASP Core</h2>
-    <p>Pelatihan ASP Core 3.0</p>
+    <h2>Hitung Luas</h2>
+    <form action="/Home/LuasSegitiga" method="GET">
+        <label>Alas :</label><br/>
+        <input type="text" name="alas" /><br/><br/>
+        <label>Tinggi: </label><br/>
+        <input type="text" name="tinggi" /><br/><br/>
+        <input type="submit" name="submit" value="Hitung" />
+    </form>
 </body>
 </html>

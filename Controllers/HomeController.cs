@@ -14,9 +14,18 @@ namespace SampleASPCore.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult LuasSegitiga(double alas,double tinggi){
+            var hasil = 0.5 * alas * tinggi;
+            return Content($"Hasilnya {hasil}"); 
+        }
+
+        public IActionResult About(string nama,string alamat)
         {
-            return Content("Hello from from About");
+            return Content($"Nama anda {nama} dan alamat {alamat}");
+        }
+
+        public IActionResult GetById(string id, string nama){
+            return Content($"ID anda {id} dan nama {nama}");
         }
 
         public IActionResult GetData()
