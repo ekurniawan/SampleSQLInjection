@@ -6,16 +6,23 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SampleASPCore.Controllers
 {
+    //[Route("company/[controller]/[action]")]
     public class HomeController : Controller
     {
         public IActionResult Index()
         {
-            return Content("From ASP MVC Core !");
+            return View();
         }
 
         public IActionResult About()
         {
             return Content("Hello from from About");
+        }
+
+        public IActionResult GetData()
+        {
+            string[] arrName = new string[] { "CSharp", "Blazor", "Java", "React Redux", "FSharp" };
+            return new JsonResult(arrName);
         }
     }
 }
