@@ -16,7 +16,9 @@ namespace SampleASPCore.Controllers
 
         public IActionResult LuasSegitiga(double alas,double tinggi){
             var hasil = 0.5 * alas * tinggi;
-            ViewData["hasil"] = hasil;
+            ViewBag.Alas = alas;
+            ViewBag.Tinggi = tinggi;
+            ViewBag.Hasil = hasil;
             ViewBag.Username = "ekurniawan";
             return View("Index");
         }
