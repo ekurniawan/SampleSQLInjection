@@ -4,7 +4,7 @@ namespace SampleASPCore {
     {
         public string GetMessageOfTheDay()
         {
-            return "Hello ASP.NET Core !";
+            return "Hello ASP.NET Core from DI !";
         }
     }
 }
