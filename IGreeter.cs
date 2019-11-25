@@ -1,5 +1,9 @@
 
-public interface IGreeter
+
+namespace SampleASPCore
 {
-    public string GetMessageOfTheDay();
+    public interface IGreeter
+    {
+        public string GetMessageOfTheDay();
+    }
 }
