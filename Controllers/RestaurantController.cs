@@ -17,6 +17,11 @@ namespace SampleASPCore.Controllers
             return View(models);
         }
 
+        public IActionResult Details(int id){
+            var model = _resto.GetById(id);
+            return View(model);
+        }
+
         public IActionResult Index(){
             var model = new Restaurant{
                 Id=1,

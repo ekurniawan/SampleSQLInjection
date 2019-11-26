@@ -24,5 +24,13 @@ namespace SampleASPCore.Services
                           select r;
             return results;
         }
+
+        public Restaurant GetById(int id)
+        {
+            var result = (from r in _restaurants
+                         where r.Id==id
+                         select r).SingleOrDefault();
+            return result;
+        }
     }
 }
