@@ -126,3 +126,6 @@ C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Shared
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Restaurant\Details.cshtml.g.cs
+C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\System.Data.SqlClient.dll
+C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
