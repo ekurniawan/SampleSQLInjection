@@ -25,6 +25,7 @@ namespace SampleASPCore.Services
             {
                 List<Restaurant> lstRestaurant = new List<Restaurant>();
                 string strSql = @"select * from Restaurants order by Name asc";
+
                 SqlCommand cmd = new SqlCommand(strSql,conn);
                 conn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -48,7 +49,29 @@ namespace SampleASPCore.Services
 
         public Restaurant GetById(int id)
         {
-            throw new System.NotImplementedException();
+            Restaurant resto = new Restaurant();
+            using(SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"select * from Restaurants where Id=@Id";
+                SqlCommand cmd = new SqlCommand(strSql,conn);
+                cmd.Parameters.AddWithValue("@Id",id);
+
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if(dr.HasRows){
+                    dr.Read();
+                    resto.Id = Convert.ToInt32(dr["Id"]);
+                    resto.Name = dr["Name"].ToString();
+                }
+
+                dr.Close();
+                cmd.Dispose();
+                conn.Close();
+
+                return resto;
+            }
+            
+            
         }
     }
 }
