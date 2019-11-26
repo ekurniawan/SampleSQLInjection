@@ -21,7 +21,7 @@ namespace SampleASPCore
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddSingleton<IGreeter, Greeter>();
-            
+
             services.AddSingleton<IRestaurantData,InMemoryRestaurantData>();
         }
 
@@ -35,6 +35,7 @@ namespace SampleASPCore
             }
 
             app.UseHttpsRedirection();
+            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
