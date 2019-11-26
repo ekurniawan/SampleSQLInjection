@@ -1,28 +1,22 @@
 @model IEnumerable<SampleASPCore.Models.Restaurant>
 
-@{
-    Layout = null;
-    
-}
+@section MyCss {
+    <link href="~/sbadmin2/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+} 
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Restaurant</title>
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-             <h2>Daftar Restaurant</h2>
-              <table class="table table-stripped">
-                  <tr>
+ <div class="card mb-4">
+    <div class="card-header">
+        Daftar Restaurant
+    </div>
+    <div class="card-body">
+            <table class="table table-stripped" id="dataTable">
+                <thead>
+                    <tr>
                       <td>Id</td>
                       <td>Name</td>
                   </tr>
+                </thead>
+                  <tbody>
                   @foreach (var item in Model)
                   {
                       <tr>
@@ -30,9 +24,17 @@
                           <td>@item.Name</td>
                       </tr>
                   }
+                  </tbody>
+                  
               </table>
             </div>
-        </div>
     </div>
-</body>
-</html>
+
+@section Scripts {
+    <!-- Page level plugins -->
+  <script src="~/sbadmin2/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="~/sbadmin2/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="~/sbadmin2/js/demo/datatables-demo.js"></script>
+}

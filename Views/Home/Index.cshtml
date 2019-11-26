@@ -1,15 +1,6 @@
-﻿@{
-    Layout = null;
-}
+﻿
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Home View</title>
-</head>
-<body>
     <h2>Hitung Luas</h2>
     <form action="/Home/LuasSegitiga" method="GET">
         <label>Alas :</label><br/>
@@ -18,7 +9,7 @@
         <input type="text" name="tinggi" value="@ViewBag.Tinggi" /><br/><br/>
         <label>Hasil :</label><br/>
         <input type="text" name="hasil" value="@ViewBag.Hasil" /><br/><br/>
-        <input type="submit" name="submit" value="Hitung" />
+        <input type="submit" name="submit" class="btn btn-success" value="Hitung" />
     </form>
     <hr />
     @if(ViewData["hasil"]!=null){
@@ -26,5 +17,4 @@
         <p>Hasil Luas Segitiga: @ViewData["hasil"]</p>
         <p>Username @ViewBag.Username</p>
     }
-</body>
-</html>
+
