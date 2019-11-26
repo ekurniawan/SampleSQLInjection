@@ -120,3 +120,4 @@ C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.Razo
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.Views.pdb
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Home\About.cshtml.g.cs
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Home\LuasSegitiga.cshtml.g.cs
+C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Restaurant\Index.cshtml.g.cs
