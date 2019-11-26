@@ -14344,6 +14344,11 @@
   "RootNamespace": "SampleASPCore",
   "Documents": [
     {
+      "FilePath": "c:\\Workshop\\2019\\Batch2\\SampleASPCore\\Views\\Restaurant\\GetData.cshtml",
+      "TargetPath": "Views\\Restaurant\\GetData.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Workshop\\2019\\Batch2\\SampleASPCore\\Views\\Home\\About.cshtml",
       "TargetPath": "Views\\Home\\About.cshtml",
       "FileKind": "mvc"
