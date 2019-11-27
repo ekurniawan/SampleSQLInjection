@@ -13,11 +13,11 @@
             <span class="alert alert-danger">@ViewBag.Error</span><br />
         }
         <form asp-action="Create">
-            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>*@
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
-                @*<span asp-validation-for="Name" class="text-danger"></span>*@
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -29,4 +29,8 @@
 <div>
     <a asp-action="GetData">Back to List</a>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
 

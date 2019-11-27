@@ -37,9 +37,13 @@ namespace SampleASPCore.Controllers
         {
             try
             {
-                _resto.Insert(resto);
-                TempData["pesan"] = $"Berhasil menambah data Restaurant {resto.Name}";
-                return RedirectToAction(nameof(GetData));
+                if (ModelState.IsValid)
+                {
+                    _resto.Insert(resto);
+                    TempData["pesan"] = $"Berhasil menambah data Restaurant {resto.Name}";
+                    return RedirectToAction(nameof(GetData));
+                }
+                return View();
             }
             catch (System.Exception ex)
             {
