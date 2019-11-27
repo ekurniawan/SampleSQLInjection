@@ -12,7 +12,8 @@ namespace SampleASPCore.Controllers
             _resto = resto;
         }
 
-        public IActionResult GetData(){
+        public IActionResult GetData()
+        {
             if (TempData["pesan"] != null)
             {
                 ViewBag.Pesan = TempData["pesan"];
@@ -22,7 +23,8 @@ namespace SampleASPCore.Controllers
             return View(models);
         }
 
-        public IActionResult Details(int id){
+        public IActionResult Details(int id)
+        {
             var model = _resto.GetById(id);
             return View(model);
         }
@@ -63,9 +65,13 @@ namespace SampleASPCore.Controllers
         {
             try
             {
-                _resto.Update(resto);
-                TempData["pesan"] = $"Data {resto.Name} berhasil di edit";
-                return RedirectToAction(nameof(GetData));
+                if (ModelState.IsValid)
+                {
+                    _resto.Update(resto);
+                    TempData["pesan"] = $"Data {resto.Name} berhasil di edit";
+                    return RedirectToAction(nameof(GetData));
+                }
+                return View();
             }
             catch (System.Exception ex)
             {
@@ -96,10 +102,12 @@ namespace SampleASPCore.Controllers
             }
         }
 
-        public IActionResult Index(){
-            var model = new Restaurant{
-                Id=1,
-                Name="Gudeg Yu Djum"
+        public IActionResult Index()
+        {
+            var model = new Restaurant
+            {
+                Id = 1,
+                Name = "Gudeg Yu Djum"
             };
 
             return View(model);
