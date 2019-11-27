@@ -76,7 +76,7 @@ namespace SampleASPCore.Services
         {
             using (SqlConnection conn = new SqlConnection(GetConnStr()))
             {
-                string strSql = @"insert into Restaurant(Name) values(@Name)";
+                string strSql = @"insert into Restaurants(Name) values(@Name)";
                 SqlCommand cmd = new SqlCommand(strSql, conn);
                 cmd.Parameters.AddWithValue("@Name",resto.Name);
 
