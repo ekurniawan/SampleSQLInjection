@@ -76,6 +76,22 @@ namespace SampleASPCore.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ActionName("Delete")]
+        public IActionResult DeletePost(int id)
+        {
+            try
+            {
+                _resto.Delete(id);
+                TempData["pesan"] = "Data restaurant berhasil didelete";
+                return RedirectToAction(nameof(GetData));
+            }
+            catch (System.Exception)
+            {
+                return View();
+            }
+        }
+
         public IActionResult Index(){
             var model = new Restaurant{
                 Id=1,
