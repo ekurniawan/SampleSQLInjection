@@ -23,7 +23,19 @@ namespace SampleASPCore.Services
         }
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"delete from Restaurants where Id=@Id";
+                var param = new { Id = id };
+                try
+                {
+                    conn.Execute(strSql, param);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
         }
 
         public IEnumerable<Restaurant> GetAll()
@@ -38,17 +50,52 @@ namespace SampleASPCore.Services
 
         public Restaurant GetById(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                /*string strSql = @"select * from Restaurants where Id=@Id";
+                var param = new { Id = id };
+                var result = conn.QuerySingle<Restaurant>(strSql, param);
+                return result;*/
+                string strSp = "sp_RestaurantById";
+                var param = new { Id = id };
+                var result = conn.QuerySingle<Restaurant>(strSp, param,
+                    commandType: System.Data.CommandType.StoredProcedure);
+                return result;
+            }
         }
 
         public void Insert(Restaurant resto)
         {
-            throw new NotImplementedException();
+            using(SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"insert into Restaurants(Name) values(@Name)";
+                var param = new { Name = resto.Name };
+                try
+                {
+                    conn.Execute(strSql, param);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
         }
 
         public void Update(Restaurant resto)
         {
-            throw new NotImplementedException();
+            using (SqlConnection conn = new SqlConnection(GetConnStr()))
+            {
+                string strSql = @"update Restaurants set Name=@Name where Id=@Id";
+                var param = new { Name = resto.Name,Id=resto.Id };
+                try
+                {
+                    conn.Execute(strSql, param);
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }
         }
     }
 }
