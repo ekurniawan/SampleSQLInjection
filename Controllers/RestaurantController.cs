@@ -33,7 +33,7 @@ namespace SampleASPCore.Controllers
             try
             {
                 _resto.Insert(resto);
-                return RedirectToAction("GetData");
+                return RedirectToAction(nameof(GetData));
             }
             catch (System.Exception ex)
             {
