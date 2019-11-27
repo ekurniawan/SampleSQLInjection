@@ -99,6 +99,7 @@ namespace SampleASPCore.Services
                 string strSql = @"update Restaurants set Name=@Name where Id=@Id";
                 SqlCommand cmd = new SqlCommand(strSql, conn);
                 cmd.Parameters.AddWithValue("@Name", resto.Name);
+                cmd.Parameters.AddWithValue("@Id", resto.Id);
 
                 try
                 {

@@ -54,6 +54,22 @@ namespace SampleASPCore.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        public IActionResult Edit(Restaurant resto)
+        {
+            try
+            {
+                _resto.Update(resto);
+                TempData["pesan"] = $"Data {resto.Name} berhasil di edit";
+                return RedirectToAction(nameof(GetData));
+            }
+            catch (System.Exception ex)
+            {
+                ViewBag.Error = $"Pesan Kesalahan: {ex.Message}";
+                return View();
+            }
+        }
+
         public IActionResult Index(){
             var model = new Restaurant{
                 Id=1,
