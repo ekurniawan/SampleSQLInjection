@@ -22,7 +22,7 @@ namespace SampleASPCore
             services.AddRazorPages();
             services.AddSingleton<IGreeter, Greeter>();
 
-            services.AddSingleton<IRestaurantData,RestaurantService>();
+            services.AddTransient<IRestaurantData,RestaurantServiceDapper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

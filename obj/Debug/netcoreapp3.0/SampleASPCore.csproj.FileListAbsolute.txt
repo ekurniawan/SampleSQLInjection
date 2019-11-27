@@ -100,7 +100,6 @@ C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\runtimes\win\lib\n
 C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\staticwebassets\SampleASPCore.StaticWebAssets.Manifest.cache
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\staticwebassets\SampleASPCore.StaticWebAssets.xml
-C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.MvcApplicationPartsAssemblyInfo.cache
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.RazorAssemblyInfo.cache
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.RazorAssemblyInfo.cs
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.AssemblyInfoInputs.cache
@@ -134,3 +133,5 @@ C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Restau
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Restaurant\Delete.cshtml.g.cs
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ViewMenu.cshtml.g.cs
+C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\Dapper.dll
+C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.MvcApplicationPartsAssemblyInfo.cache
