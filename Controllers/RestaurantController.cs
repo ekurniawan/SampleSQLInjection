@@ -22,6 +22,11 @@ namespace SampleASPCore.Controllers
             return View(model);
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         public IActionResult Index(){
             var model = new Restaurant{
                 Id=1,

@@ -16,6 +16,11 @@ namespace SampleASPCore.Services
             };
         }
 
+        public void Delete(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Restaurant> GetAll()
         {
             //var results = _restaurants.OrderBy(r=>r.Name);
@@ -31,6 +36,16 @@ namespace SampleASPCore.Services
                          where r.Id==id
                          select r).SingleOrDefault();
             return result;
+        }
+
+        public void Insert(Restaurant resto)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Update(Restaurant resto)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
