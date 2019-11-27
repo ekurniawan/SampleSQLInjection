@@ -130,3 +130,4 @@ C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\SampleASPCore.pdb
 C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\SampleASPCore.Views.pdb
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.csprojAssemblyReference.cache
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Restaurant\Create.cshtml.g.cs
+C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Restaurant\Edit.cshtml.g.cs

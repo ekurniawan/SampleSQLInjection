@@ -48,6 +48,12 @@ namespace SampleASPCore.Controllers
             }
         }
 
+        public IActionResult Edit(int id)
+        {
+            var model = _resto.GetById(id);
+            return View(model);
+        }
+
         public IActionResult Index(){
             var model = new Restaurant{
                 Id=1,

@@ -32,7 +32,9 @@
                         <td>@item.Name</td>
                         <td>
                             <a asp-action="Details" asp-route-id="@item.Id"
-                               class="btn btn-xs btn-primary">details</a>
+                               class="btn btn-sm btn-primary">details</a>&nbsp;
+                            <a asp-action="Edit" asp-route-id="@item.Id"
+                               class="btn btn-warning btn-sm">edit</a>
                         </td>
                     </tr>
                 }
