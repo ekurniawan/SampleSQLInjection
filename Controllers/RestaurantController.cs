@@ -27,6 +27,21 @@ namespace SampleASPCore.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Create(Restaurant resto)
+        {
+            try
+            {
+                _resto.Insert(resto);
+                return RedirectToAction("GetData");
+            }
+            catch (System.Exception ex)
+            {
+                ViewBag.Error = $"Kesalahan: {ex.Message}";
+                return View();
+            }
+        }
+
         public IActionResult Index(){
             var model = new Restaurant{
                 Id=1,
