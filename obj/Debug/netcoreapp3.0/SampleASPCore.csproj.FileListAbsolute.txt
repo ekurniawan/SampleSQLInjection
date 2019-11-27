@@ -123,3 +123,9 @@ C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.View
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.csproj.CopyComplete
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.dll
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.pdb
+C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\SampleASPCore.deps.json
+C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\SampleASPCore.runtimeconfig.json
+C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\SampleASPCore.runtimeconfig.dev.json
+C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\SampleASPCore.pdb
+C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\SampleASPCore.Views.pdb
+C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.csprojAssemblyReference.cache
