@@ -70,6 +70,12 @@ namespace SampleASPCore.Controllers
             }
         }
 
+        public IActionResult Delete(int id)
+        {
+            var model = _resto.GetById(id);
+            return View(model);
+        }
+
         public IActionResult Index(){
             var model = new Restaurant{
                 Id=1,
