@@ -10,6 +10,11 @@
         Daftar Restaurant
     </div>
     <div class="card-body">
+        @if (ViewBag.Pesan != null)
+        {
+            <span class="alert alert-success">@ViewBag.Pesan</span><br/><br/>
+        }
+
         <a asp-action="Create" class="btn btn-success btn-sm">Create new Restaurant</a><br/><br />
         <table class="table table-bordered" id="dataTable">
             <thead>

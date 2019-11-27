@@ -13,6 +13,11 @@ namespace SampleASPCore.Controllers
         }
 
         public IActionResult GetData(){
+            if (TempData["pesan"] != null)
+            {
+                ViewBag.Pesan = TempData["pesan"];
+            }
+
             var models = _resto.GetAll();
             return View(models);
         }
@@ -33,6 +38,7 @@ namespace SampleASPCore.Controllers
             try
             {
                 _resto.Insert(resto);
+                TempData["pesan"] = $"Berhasil menambah data Restaurant {resto.Name}";
                 return RedirectToAction(nameof(GetData));
             }
             catch (System.Exception ex)
