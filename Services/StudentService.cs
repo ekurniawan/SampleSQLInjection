@@ -35,7 +35,8 @@ namespace SampleASPCore.Services
             //var results = await _db.Students.OrderBy(s => s.FirstMidName).ToListAsync();
             var results = await (from s in _db.Students
                            orderby s.FirstMidName ascending
-                           select s).ToListAsync();
+                           select s).AsNoTracking().ToListAsync();
+           
             return results;
         }
 

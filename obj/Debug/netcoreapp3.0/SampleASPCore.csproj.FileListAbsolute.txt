@@ -135,3 +135,4 @@ C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Shared
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_ViewMenu.cshtml.g.cs
 C:\Workshop\2019\Batch2\SampleASPCore\bin\Debug\netcoreapp3.0\Dapper.dll
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.MvcApplicationPartsAssemblyInfo.cache
+C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Student\Index.cshtml.g.cs
