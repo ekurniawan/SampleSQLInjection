@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using SampleASPCore.Data;
 using SampleASPCore.Models;
 using SampleASPCore.Services;
 
@@ -6,9 +7,12 @@ namespace SampleASPCore.Controllers
 {
     public class RestaurantController : Controller
     {
+        private ApplicationDbContext _db;
         private IRestaurantData _resto;
-        public RestaurantController(IRestaurantData resto)
+        public RestaurantController(IRestaurantData resto,
+            ApplicationDbContext db)
         {
+            _db = db;
             _resto = resto;
         }
 
@@ -104,6 +108,8 @@ namespace SampleASPCore.Controllers
 
         public IActionResult Index()
         {
+            DbInitializer.Initialize(_db);
+
             var model = new Restaurant
             {
                 Id = 1,

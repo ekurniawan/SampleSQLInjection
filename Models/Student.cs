@@ -11,6 +11,7 @@ namespace SampleASPCore.Models
         public int StudentID { get; set; }
         public string LastName { get; set; }
         public string FirstMidName { get; set; }
+        public string Address { get; set; }
         public DateTime EnrollmentDate { get; set; }
 
         public IEnumerable<Enrollment> Enrollments { get; set; }

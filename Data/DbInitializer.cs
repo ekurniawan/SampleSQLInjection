@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SampleASPCore.Data
 {
-    public class DbInitializer
+    public static class DbInitializer
     {
         public static void Initialize(ApplicationDbContext context)
         {
