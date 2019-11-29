@@ -39,6 +39,24 @@
             @Html.DisplayFor(model => model.EnrollmentDate)
         </dd>
     </dl>
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            <td>Course Name</td>
+            <td>Credit</td>
+            <td>Grade</td>
+            <td>Student Name</td>
+        </tr>
+        @foreach(var item in Model.Enrollments)
+        {
+            <tr>
+                <td>@item.Course.Title</td>
+                <td>@item.Course.Credits</td>
+                <td>@item.Grade</td>
+                <td>@item.Student.FirstMidName</td>
+            </tr>
+        }
+    </table>
 </div>
 <div>
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |

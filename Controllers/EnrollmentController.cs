@@ -4,52 +4,37 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using SampleASPCore.Services;
 
 namespace SampleASPCore.Controllers
 {
-    public class StudentController : Controller
+    public class EnrollmentController : Controller
     {
-        private IStudent _student;
-        public StudentController(IStudent student)
+        private IEnrollment _enrollment;
+        public EnrollmentController(IEnrollment enrollment)
         {
-            _student = student;
+            _enrollment = enrollment;
         }
-
-        // GET: Student
+        // GET: Enrollment
         public async Task<ActionResult> Index()
         {
-            var models = await _student.GetAll();
-
-            ViewBag.LastName = new SelectList(models,"StudentID","LastName");
+            var models = await _enrollment.GetAll();
             return View(models);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Search(string keyword,string selectLast)
+        // GET: Enrollment/Details/5
+        public ActionResult Details(int id)
         {
-            var models = await _student.GetByName(keyword);
-
-            
-            return View("Index",models);
+            return View();
         }
 
-        // GET: Student/Details/5
-        public async Task<ActionResult> Details(int id)
-        {
-            var model = await _student.GetById(id.ToString());
-
-            return View(model);
-        }
-
-        // GET: Student/Create
+        // GET: Enrollment/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Student/Create
+        // POST: Enrollment/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
@@ -66,13 +51,13 @@ namespace SampleASPCore.Controllers
             }
         }
 
-        // GET: Student/Edit/5
+        // GET: Enrollment/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Student/Edit/5
+        // POST: Enrollment/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
@@ -89,13 +74,13 @@ namespace SampleASPCore.Controllers
             }
         }
 
-        // GET: Student/Delete/5
+        // GET: Enrollment/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Student/Delete/5
+        // POST: Enrollment/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)

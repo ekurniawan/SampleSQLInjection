@@ -15,9 +15,18 @@ namespace SampleASPCore.Services
         {
             _db = db;
         }
-        public Task Create(Student obj)
+
+        public async Task Create(Student obj)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _db.Add(obj);
+                await _db.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Task Delete(string id)
@@ -44,9 +53,19 @@ namespace SampleASPCore.Services
         {
             //var result = await _db.Students.Where(s => s.StudentID == Convert.ToInt32(id))
             //    .AsNoTracking().SingleOrDefaultAsync();
+            //var result = await (from s in _db.Students
+            //                    where s.StudentID == Convert.ToInt32(id)
+            //                    select s).AsNoTracking().SingleOrDefaultAsync();
+
             var result = await (from s in _db.Students
-                                where s.StudentID == Convert.ToInt32(id)
-                                select s).AsNoTracking().SingleOrDefaultAsync();
+                                 where s.StudentID == Convert.ToInt32(id)
+                                 select s).AsNoTracking().FirstOrDefaultAsync();
+
+            var enrollment = await (from e in _db.Enrollments.Include(e=>e.Course)
+                                     where e.StudentID == result.StudentID
+                                     select e).AsNoTracking().ToListAsync();
+
+            result.Enrollments = enrollment;
 
             return result;
         }

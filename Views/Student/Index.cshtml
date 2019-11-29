@@ -9,10 +9,11 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-@*<select asp-items="@ViewBag.LastName"></select>*@
+
 <form class="form-inline" asp-action="Search">
     <label>Search By Name :</label>
     <input type="text" class="form-control" name="keyword">
+    <select asp-items="@ViewBag.LastName" name="selectLast"></select>
     <input type="submit" class="btn btn-primary" />
 </form><br/>
 <table class="table table-bordered">
@@ -53,7 +54,7 @@
                     @Html.DisplayFor(modelItem => item.PhoneNumber)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                    @item.EnrollmentDate.ToShortDateString()
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

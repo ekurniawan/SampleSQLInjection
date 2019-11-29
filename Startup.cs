@@ -36,6 +36,7 @@ namespace SampleASPCore
 
             services.AddTransient<IRestaurantData,RestaurantServiceDapper>();
             services.AddTransient<IStudent, StudentService>();
+            services.AddTransient<IEnrollment, EnrollmentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

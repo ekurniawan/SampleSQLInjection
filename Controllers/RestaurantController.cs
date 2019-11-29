@@ -108,7 +108,7 @@ namespace SampleASPCore.Controllers
 
         public IActionResult Index()
         {
-            //DbInitializer.Initialize(_db);
+            DbInitializer.Initialize(_db);
 
             var model = new Restaurant
             {
