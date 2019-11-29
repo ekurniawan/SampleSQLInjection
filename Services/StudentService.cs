@@ -50,16 +50,8 @@ namespace SampleASPCore.Services
         {
             try
             {
-                var editData = await GetById(obj.StudentID.ToString());
-                if (editData != null)
-                {
-                    _db.Update(editData);
-                    await _db.SaveChangesAsync();
-                }
-                else
-                {
-                    throw new Exception("Data tidak ditemukan");
-                }
+                _db.Update(obj);
+                await _db.SaveChangesAsync();
             }
             catch (Exception ex)
             {
@@ -71,9 +63,9 @@ namespace SampleASPCore.Services
         {
             //var results = await _db.Students.OrderBy(s => s.FirstMidName).ToListAsync();
             var results = await (from s in _db.Students
-                           orderby s.FirstMidName ascending
-                           select s).AsNoTracking().ToListAsync();
-       
+                                 orderby s.FirstMidName ascending
+                                 select s).AsNoTracking().ToListAsync();
+
             return results;
         }
 
@@ -88,8 +80,8 @@ namespace SampleASPCore.Services
 
             //var model = await _db.Students.AsNoTracking().FirstOrDefaultAsync(s => s.StudentID == Convert.ToInt32(id));
             var result = await (from s in _db.Students
-                                 where s.StudentID == Convert.ToInt32(id)
-                                 select s).AsNoTracking().SingleOrDefaultAsync();
+                                where s.StudentID == Convert.ToInt32(id)
+                                select s).AsNoTracking().SingleOrDefaultAsync();
 
             var enrollment = await (from e in _db.Enrollments.Include(e => e.Course)
                                     where e.StudentID == Convert.ToInt32(id)

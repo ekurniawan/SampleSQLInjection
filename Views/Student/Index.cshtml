@@ -10,6 +10,13 @@
     <a asp-action="Create">Create New</a>
 </p>
 
+@if (ViewBag.Pesan != null)
+{
+    <div class="alert alert-success alert-dismissible fade show">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Info!</strong>@ViewBag.Pesan
+    </div>
+}
 <form class="form-inline" asp-action="Search">
     <label>Search By Name :</label>
     <input type="text" class="form-control" name="keyword">
@@ -57,7 +64,7 @@
                     @item.EnrollmentDate.ToShortDateString()
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Edit", "Edit", new {  id=item.StudentID }) |
                     @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
                     @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
                 </td>

@@ -21,6 +21,9 @@ namespace SampleASPCore.Controllers
         // GET: Student
         public async Task<ActionResult> Index()
         {
+            if (TempData["pesan"] != null)
+                ViewBag.Pesan = TempData["pesan"];
+
             var models = await _student.GetAll();
 
             ViewBag.LastName = new SelectList(models,"StudentID","LastName");
@@ -69,24 +72,27 @@ namespace SampleASPCore.Controllers
         }
 
         // GET: Student/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int id)
         {
-            return View();
+            var model = await _student.GetById(id.ToString());
+
+            return View(model);
         }
 
         // POST: Student/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> Edit(Student student)
         {
             try
             {
-                // TODO: Add update logic here
-
+                await _student.Edit(student);
+                TempData["pesan"] = $"Data student {student.FirstMidName} berhasil diedit";
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception ex)
             {
+                ViewBag.Pesan = $"Pesan Kesalahan: {ex.Message}";
                 return View();
             }
         }
