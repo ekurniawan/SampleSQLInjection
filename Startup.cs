@@ -26,6 +26,11 @@ namespace SampleASPCore
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(15);
+            });
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     _config.GetConnectionString("DefaultConnection")));
@@ -48,7 +53,9 @@ namespace SampleASPCore
                 app.UseDeveloperExceptionPage();
             }
 
+            
             app.UseHttpsRedirection();
+            app.UseSession();
             app.UseStaticFiles();
             app.UseRouting();
 
