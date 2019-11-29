@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using SampleASPCore.Models;
 using SampleASPCore.Services;
 
 namespace SampleASPCore.Controllers
@@ -52,16 +53,17 @@ namespace SampleASPCore.Controllers
         // POST: Student/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(Student student)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                await _student.Create(student);
+                TempData["pesan"] = $"Data student {student.FirstMidName} berhasil ditambah";
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception ex)
             {
+                ViewBag.Error = $"Error: {ex.Message}";
                 return View();
             }
         }

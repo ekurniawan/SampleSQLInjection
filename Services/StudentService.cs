@@ -73,7 +73,7 @@ namespace SampleASPCore.Services
             var results = await (from s in _db.Students
                            orderby s.FirstMidName ascending
                            select s).AsNoTracking().ToListAsync();
-           
+       
             return results;
         }
 

@@ -138,3 +138,4 @@ C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\SampleASPCore.MvcA
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Student\Index.cshtml.g.cs
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Student\Details.cshtml.g.cs
 C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Enrollment\Index.cshtml.g.cs
+C:\Workshop\2019\Batch2\SampleASPCore\obj\Debug\netcoreapp3.0\Razor\Views\Student\Create.cshtml.g.cs
