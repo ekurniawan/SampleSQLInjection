@@ -29,14 +29,42 @@ namespace SampleASPCore.Services
             }
         }
 
-        public Task Delete(string id)
+        public async Task Delete(string id)
         {
-            throw new NotImplementedException();
+            var deleteData = await GetById(id);
+            if (deleteData != null)
+            {
+                try
+                {
+                    _db.Remove(deleteData);
+                    await _db.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"Error: {ex.Message}");
+                }
+            }
         }
 
-        public Task Edit(Student obj)
+        public async Task Edit(Student obj)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var editData = await GetById(obj.StudentID.ToString());
+                if (editData != null)
+                {
+                    _db.Update(editData);
+                    await _db.SaveChangesAsync();
+                }
+                else
+                {
+                    throw new Exception("Data tidak ditemukan");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error: {ex.Message}");
+            }
         }
 
         public async Task<IEnumerable<Student>> GetAll()
@@ -57,6 +85,8 @@ namespace SampleASPCore.Services
             //                    where s.StudentID == Convert.ToInt32(id)
             //                    select s).AsNoTracking().SingleOrDefaultAsync();
 
+
+            //var model = await _db.Students.AsNoTracking().FirstOrDefaultAsync(s => s.StudentID == Convert.ToInt32(id));
             var result = await (from s in _db.Students
                                  where s.StudentID == Convert.ToInt32(id)
                                  select s).AsNoTracking().SingleOrDefaultAsync();
