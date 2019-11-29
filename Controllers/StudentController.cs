@@ -22,8 +22,15 @@ namespace SampleASPCore.Controllers
         {
             var models = await _student.GetAll();
 
-            ViewBag.LastName = new SelectList(models,"StudentID","LastName");
+            //ViewBag.LastName = new SelectList(models,"StudentID","LastName");
             return View(models);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Search(string keyword)
+        {
+            var models = await _student.GetByName(keyword);
+            return View("Index",models);
         }
 
         // GET: Student/Details/5

@@ -51,9 +51,15 @@ namespace SampleASPCore.Services
             return result;
         }
 
-        public Task<IEnumerable<Student>> GetByName(string name)
+        public async Task<IEnumerable<Student>> GetByName(string name)
         {
-            throw new NotImplementedException();
+            //var lmdResults = await _db.Students.Where(s => s.FirstMidName.Contains(name) || 
+            //    s.LastName.Contains(name)).AsNoTracking().ToListAsync();
+            var results = await (from s in _db.Students
+                                 where s.FirstMidName.Contains(name) || s.LastName.Contains(name)
+                                 select s).AsNoTracking().ToListAsync();
+
+            return results;
         }
     }
 }
