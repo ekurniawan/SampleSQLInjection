@@ -40,9 +40,15 @@ namespace SampleASPCore.Services
             return results;
         }
 
-        public Task<Student> GetById(string id)
+        public async Task<Student> GetById(string id)
         {
-            throw new NotImplementedException();
+            //var result = await _db.Students.Where(s => s.StudentID == Convert.ToInt32(id))
+            //    .AsNoTracking().SingleOrDefaultAsync();
+            var result = await (from s in _db.Students
+                                where s.StudentID == Convert.ToInt32(id)
+                                select s).AsNoTracking().SingleOrDefaultAsync();
+
+            return result;
         }
 
         public Task<IEnumerable<Student>> GetByName(string name)

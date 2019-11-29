@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SampleASPCore.Services;
 
 namespace SampleASPCore.Controllers
@@ -20,13 +21,16 @@ namespace SampleASPCore.Controllers
         public async Task<ActionResult> Index()
         {
             var models = await _student.GetAll();
+
+            ViewBag.LastName = new SelectList(models,"StudentID","LastName");
             return View(models);
         }
 
         // GET: Student/Details/5
-        public ActionResult Details(int id)
+        public async Task<ActionResult> Details(int id)
         {
-            return View();
+            var model = await _student.GetById(id.ToString());
+            return View(model);
         }
 
         // GET: Student/Create

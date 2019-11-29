@@ -4,11 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Student List</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<select asp-items="@ViewBag.LastName"></select>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -50,7 +51,7 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.StudentID }) |
                 @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
             </td>
         </tr>
