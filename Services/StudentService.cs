@@ -59,11 +59,11 @@ namespace SampleASPCore.Services
 
             var result = await (from s in _db.Students
                                  where s.StudentID == Convert.ToInt32(id)
-                                 select s).AsNoTracking().FirstOrDefaultAsync();
+                                 select s).AsNoTracking().SingleOrDefaultAsync();
 
-            var enrollment = await (from e in _db.Enrollments.Include(e=>e.Course)
-                                     where e.StudentID == result.StudentID
-                                     select e).AsNoTracking().ToListAsync();
+            var enrollment = await (from e in _db.Enrollments.Include(e => e.Course)
+                                    where e.StudentID == Convert.ToInt32(id)
+                                    select e).AsNoTracking().ToListAsync();
 
             result.Enrollments = enrollment;
 

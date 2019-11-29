@@ -45,7 +45,6 @@
             <td>Course Name</td>
             <td>Credit</td>
             <td>Grade</td>
-            <td>Student Name</td>
         </tr>
         @foreach(var item in Model.Enrollments)
         {
@@ -53,7 +52,6 @@
                 <td>@item.Course.Title</td>
                 <td>@item.Course.Credits</td>
                 <td>@item.Grade</td>
-                <td>@item.Student.FirstMidName</td>
             </tr>
         }
     </table>
