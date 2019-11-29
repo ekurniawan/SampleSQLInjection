@@ -98,24 +98,27 @@ namespace SampleASPCore.Controllers
         }
 
         // GET: Student/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            return View();
+            var model = await _student.GetById(id.ToString());
+            return View(model);
         }
 
         // POST: Student/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        [ActionName("Delete")]
+        public async Task<ActionResult> DeletePost(int id)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                await _student.Delete(id.ToString());
+                TempData["pesan"] = $"Data student berhasil didelete";
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch(Exception ex)
             {
+                ViewBag.Pesan = $"Error: {ex.Message}";
                 return View();
             }
         }
