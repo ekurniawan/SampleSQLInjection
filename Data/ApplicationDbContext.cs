@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SampleASPCore.Models;
 using System;
 using System.Collections.Generic;
@@ -16,5 +17,6 @@ namespace SampleASPCore.Data
         public DbSet<Student> Students { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
+        public DbSet<Restaurant> Restaurants { get; set; }
     }
 }
